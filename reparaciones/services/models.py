@@ -81,4 +81,3 @@ class Payments(models.Model):
     
     def __str__(self):
         return f"{self.service}: {self.payment_method} - {self.amount}"
-
