@@ -9,87 +9,135 @@ from .serializers import PaymentMethodSerializer, StatusSerializer, ServiceTypeS
 # Modelos pequeños
 
 # Vistas de PaymentMethod (CRUD)
-class CreatePaymentMethodView():
-    pass
+class ListPaymentMethodView(generics.ListAPIView):
+    queryset = PaymentMethod.objects.all()
+    serializer_class = PaymentMethodSerializer
 
-class ReadPaymentMethodView():
-    pass
+class CreatePaymentMethodView(generics.CreateAPIView):
+    queryset = PaymentMethod.objects.all()
+    serializer_class = PaymentMethodSerializer
 
-class UpdatePaymentMethodView():
-    pass
+class RetrievePaymentMethodView(generics.RetrieveAPIView):
+    queryset = PaymentMethod.objects.all()
+    serializer_class = PaymentMethodSerializer
 
-class DeletePaymentMethodView():
-    pass
+class UpdatePaymentMethodView(generics.UpdateAPIView):
+    queryset = PaymentMethod.objects.all()
+    serializer_class = PaymentMethodSerializer
+
+class DestroyPaymentMethodView(generics.DestroyAPIView):
+    queryset = PaymentMethod.objects.all()
+    serializer_class = PaymentMethodSerializer
+
 
 # Vistas de Status (CRUD)
-class CreateStatusView():
-    pass
+class ListStatusView(generics.ListAPIView):
+    queryset = Status.objects.all()
+    serializer_class = StatusSerializer
+    
+class CreateStatusView(generics.CreateAPIView):
+    queryset = Status.objects.all()
+    serializer_class = StatusSerializer
 
-class ReadStatusView():
-    pass
-
-class UpdateStatusView():
-    pass
-
-class DeleteStatusView():
-    pass
-
+class RetrieveStatusView(generics.RetrieveAPIView):
+    queryset = Status.objects.all()
+    serializer_class = StatusSerializer
+    
+class UpdateStatusView(generics.UpdateAPIView):
+    queryset = Status.objects.all()
+    serializer_class = StatusSerializer
+    
+class DestroyStatusView(generics.DestroyAPIView):
+    queryset = Status.objects.all()
+    serializer_class = StatusSerializer
+    
+    
 # Vistas de ServiceType (CRUD)
-class CreateServiceTypeView():
-    pass
+class ListServiceTypeView(generics.ListAPIView):
+    queryset = ServiceType.objects.all()
+    serializer_class = ServiceTypeSerializer
 
-class ReadServiceTypeView():
-    pass
-
-class UpdateServiceTypeView():
-    pass
-
-class DeleteServiceTypeView():
-    pass
-
+class CreateServiceTypeView(generics.CreateAPIView):
+    queryset = ServiceType.objects.all()
+    serializer_class = ServiceTypeSerializer
+    
+class RetrieveServiceTypeView(generics.RetrieveAPIView):
+    queryset = ServiceType.objects.all()
+    serializer_class = ServiceTypeSerializer
+    
+class UpdateServiceTypeView(generics.UpdateAPIView):
+    queryset = ServiceType.objects.all()
+    serializer_class = ServiceTypeSerializer
+    
+class DestroyServiceTypeView(generics.DestroyAPIView):
+    queryset = ServiceType.objects.all()
+    serializer_class = ServiceTypeSerializer
+    
+    
 # Modelos principales
 
 # Vistas de Service (CRUD)
-class CreateServiceView():
-    pass
+class ListServiceView(generics.ListAPIView):
+    queryset = Service.objects.all()
+    serializer_class = ServiceSerializer
 
-class ReadServiceView():
-    pass
+class CreateServiceView(generics.CreateAPIView):
+    queryset = Service.objects.all()
+    serializer_class = ServiceSerializer
 
-class UpdateServiceView():
-    pass
+class RetrieveServiceView(generics.RetrieveAPIView):
+    queryset = Service.objects.all()
+    serializer_class = ServiceSerializer
 
-class DeleteServiceView():
-    pass
+class UpdateServiceView(generics.UpdateAPIView):
+    queryset = Service.objects.all()
+    serializer_class = ServiceSerializer
+
+class DestroyServiceView(generics.DestroyAPIView):
+    queryset = Service.objects.all()
+    serializer_class = ServiceSerializer
+    
 
 # Vistas de ServiceHistory (CRUD)
-class CreateServiceHistoryView():
-    pass
+class ListServiceHistoryView(generics.ListAPIView):
+    queryset = ServiceHistory.objects.all()
+    serializer_class = ServiceHistorySerializer
 
-class ReadServiceHistoryView():
-    pass
-
-class UpdateServiceHistoryView():
-    pass
-
-class DeleteServiceHistoryView():
-    pass
-
+class CreateServiceHistoryView(generics.CreateAPIView):
+    queryset = ServiceHistory.objects.all()
+    serializer_class = ServiceHistorySerializer
+    
+class RetrieveServiceHistoryView(generics.RetrieveAPIView):
+    queryset = ServiceHistory.objects.all()
+    serializer_class = ServiceHistorySerializer
+    
+class UpdateServiceHistoryView(generics.UpdateAPIView):
+    queryset = ServiceHistory.objects.all()
+    serializer_class = ServiceHistorySerializer
+    
+class DestroyServiceHistoryView(generics.DestroyAPIView):
+    queryset = ServiceHistory.objects.all()
+    serializer_class = ServiceHistorySerializer
+    
+    
 # Vistas de Payments
-class CreatePaymentsView():
-    pass
+class ListPaymentsView(generics.ListAPIView):
+    queryset = Payments.objects.all()
+    serializer_class = PaymentsSerializer
 
-class ReadPaymentsView():
-    pass
-
-class UpdatePaymentsView():
-    pass
-
-class DeletePaymentsView():
-    pass
-
-
-# Prueba
-class RetrieveUpdateDestroyPaymentMethodView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = PaymentMethod.objects.all()
-    serializer_class = PaymentMethodSerializer
+class CreatePaymentsView(generics.CreateAPIView):
+    queryset = Payments.objects.all()
+    serializer_class = PaymentsSerializer
+    
+class RetrievePaymentsView(generics.RetrieveAPIView):
+    queryset = Payments.objects.all()
+    serializer_class = PaymentsSerializer
+    
+class UpdatePaymentsView(generics.UpdateAPIView):
+    queryset = Payments.objects.all()
+    serializer_class = PaymentsSerializer
+    
+class DestroyPaymentsView(generics.DestroyAPIView):
+    queryset = Payments.objects.all()
+    serializer_class = PaymentsSerializer
+    
