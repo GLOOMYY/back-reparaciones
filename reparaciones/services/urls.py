@@ -21,11 +21,11 @@ from .views import ListPaymentsView, CreatePaymentsView, RetrievePaymentsView, U
 
 
 urls_payment_method = [
-    path("payment-method/list", ListPaymentMethodView.as_view(), name = "cliente-lista"),
-    path("payment-method/create", CreatePaymentMethodView.as_view(), name = "cliente-crear"),
-    path("payment-method/retrieve/<int:pk>", RetrievePaymentMethodView.as_view(), name = "cliente-detalle"),
-    path("payment-method/update/<int:pk>", UpdatePaymentMethodView.as_view(), name = "cliente-actualizar"),
-    path("payment-method/destroy/<int:pk>", DestroyPaymentMethodView.as_view(), name = "cliente-eliminar"),
+    path("payment-method/list", ListPaymentMethodView.as_view(), name = "payment-method-lista"),
+    path("payment-method/create", CreatePaymentMethodView.as_view(), name = "payment-method-crear"),
+    path("payment-method/retrieve/<int:pk>", RetrievePaymentMethodView.as_view(), name = "payment-method-detalle"),
+    path("payment-method/update/<int:pk>", UpdatePaymentMethodView.as_view(), name = "payment-method-actualizar"),
+    path("payment-method/destroy/<int:pk>", DestroyPaymentMethodView.as_view(), name = "payment-method-eliminar"),
 ]
 
 urls_status = [

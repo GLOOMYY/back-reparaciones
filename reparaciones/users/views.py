@@ -7,42 +7,65 @@ from .serializers import UserSerializer, ClientSerializer, IdentificationTypeSer
 # Create your views here.
 
 # Vistas de User (CRUD)
-class CreateUserView():
-    pass
+class ListUserView(generics.ListAPIView):
+    queryset = User
+    serializer_class = UserSerializer
 
-class ReadUserView():
-    pass
+class CreateUserView(generics.CreateAPIView):
+    queryset = User
+    serializer_class = UserSerializer
 
-class UpdateUserView():
-    pass
+class RetrieveUserView(generics.RetrieveAPIView):
+    queryset = User
+    serializer_class = UserSerializer
 
-class DeleteUserView():
-    pass
+class UpdateUserView(generics.UpdateAPIView):
+    queryset = User
+    serializer_class = UserSerializer
+
+class DestroyUserView(generics.DestroyAPIView):
+    queryset = User
+    serializer_class = UserSerializer
 
 # Vistas de Client (CRUD)
 
-class CreateClienteView():
-    pass
+class ListClientView(generics.ListAPIView):
+    queryset = Client
+    serializer_class = ClientSerializer
 
-class ReadClienteView():
-    pass
+class CreateClientView(generics.CreateAPIView):
+    queryset = Client
+    serializer_class = ClientSerializer
 
-class UpdateClienteView():
-    pass
+class RetrieveClientView(generics.RetrieveAPIView):
+    queryset = Client
+    serializer_class = ClientSerializer
 
-class DeleteClienteView():
-    pass
+class UpdateClientView(generics.UpdateAPIView):
+    queryset = Client
+    serializer_class = ClientSerializer
+
+class DestroyClientView(generics.DestroyAPIView):
+    queryset = Client
+    serializer_class = ClientSerializer
 
 # Vistas de IdentificacionType (CRUD)
+class ListIdentificationTypeView(generics.ListAPIView):
+    queryset = IdentificationType
+    serializer_class = IdentificationTypeSerializer
 
-class CreateIdentificationTypeView():
-    pass
+class CreateIdentificationTypeView(generics.CreateAPIView):
+    queryset = IdentificationType
+    serializer_class = IdentificationTypeSerializer
 
-class ReadIdentificationTypeView():
-    pass
+class RetrieveIdentificationTypeView(generics.RetrieveAPIView):
+    queryset = IdentificationType
+    serializer_class = IdentificationTypeSerializer
 
-class UpdateIdentificationTypeView():
-    pass
+class UpdateIdentificationTypeView(generics.UpdateAPIView):
+    queryset = IdentificationType
+    serializer_class = IdentificationTypeSerializer
 
-class DeleteIdentificationTypeView():
-    pass
+class DestroyIdentificationTypeView(generics.DestroyAPIView):
+    queryset = IdentificationType
+    serializer_class = IdentificationTypeSerializer
