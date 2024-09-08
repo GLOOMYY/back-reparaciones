@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets, generics, authentication, permissions
 from rest_framework.authtoken.views import ObtainAuthToken
+from django_filters.rest_framework import DjangoFilterBackend
 from .models import User, Client, IdentificationType 
 from .serializers import UserSerializer, ClientSerializer, IdentificationTypeSerializer
 
@@ -10,6 +11,7 @@ from .serializers import UserSerializer, ClientSerializer, IdentificationTypeSer
 class ListUserView(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    filter_backends = [DjangoFilterBackend]
 
 class CreateUserView(generics.CreateAPIView):
     queryset = User.objects.all()
@@ -32,6 +34,7 @@ class DestroyUserView(generics.DestroyAPIView):
 class ListClientView(generics.ListAPIView):
     queryset = Client.objects.all()
     serializer_class = ClientSerializer
+    filter_backends = [DjangoFilterBackend]
 
 class CreateClientView(generics.CreateAPIView):
     queryset = Client.objects.all()
@@ -53,6 +56,7 @@ class DestroyClientView(generics.DestroyAPIView):
 class ListIdentificationTypeView(generics.ListAPIView):
     queryset = IdentificationType.objects.all()
     serializer_class = IdentificationTypeSerializer
+    filter_backends = [DjangoFilterBackend]
 
 class CreateIdentificationTypeView(generics.CreateAPIView):
     queryset = IdentificationType.objects.all()

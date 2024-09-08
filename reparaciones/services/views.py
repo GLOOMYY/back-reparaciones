@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets, generics, authentication, permissions
 from rest_framework.authtoken.views import ObtainAuthToken
+from django_filters.rest_framework import DjangoFilterBackend
 from .models import PaymentMethod, Status, ServiceType, Service, ServiceHistory, Payments
 from .serializers import PaymentMethodSerializer, StatusSerializer, ServiceTypeSerializer, ServiceSerializer, ServiceHistorySerializer, PaymentsSerializer
 
@@ -12,14 +13,17 @@ from .serializers import PaymentMethodSerializer, StatusSerializer, ServiceTypeS
 class ListPaymentMethodView(generics.ListAPIView):
     queryset = PaymentMethod.objects.all()
     serializer_class = PaymentMethodSerializer
+    filter_backends = [DjangoFilterBackend]
 
 class CreatePaymentMethodView(generics.CreateAPIView):
     queryset = PaymentMethod.objects.all()
     serializer_class = PaymentMethodSerializer
 
+
 class RetrievePaymentMethodView(generics.RetrieveAPIView):
     queryset = PaymentMethod.objects.all()
     serializer_class = PaymentMethodSerializer
+    
 
 class UpdatePaymentMethodView(generics.UpdateAPIView):
     queryset = PaymentMethod.objects.all()
@@ -34,6 +38,7 @@ class DestroyPaymentMethodView(generics.DestroyAPIView):
 class ListStatusView(generics.ListAPIView):
     queryset = Status.objects.all()
     serializer_class = StatusSerializer
+    filter_backends = [DjangoFilterBackend]
     
 class CreateStatusView(generics.CreateAPIView):
     queryset = Status.objects.all()
@@ -56,6 +61,7 @@ class DestroyStatusView(generics.DestroyAPIView):
 class ListServiceTypeView(generics.ListAPIView):
     queryset = ServiceType.objects.all()
     serializer_class = ServiceTypeSerializer
+    filter_backends = [DjangoFilterBackend]
 
 class CreateServiceTypeView(generics.CreateAPIView):
     queryset = ServiceType.objects.all()
@@ -80,6 +86,7 @@ class DestroyServiceTypeView(generics.DestroyAPIView):
 class ListServiceView(generics.ListAPIView):
     queryset = Service.objects.all()
     serializer_class = ServiceSerializer
+    filter_backends = [DjangoFilterBackend]
 
 class CreateServiceView(generics.CreateAPIView):
     queryset = Service.objects.all()
@@ -102,6 +109,7 @@ class DestroyServiceView(generics.DestroyAPIView):
 class ListServiceHistoryView(generics.ListAPIView):
     queryset = ServiceHistory.objects.all()
     serializer_class = ServiceHistorySerializer
+    filter_backends = [DjangoFilterBackend]
 
 class CreateServiceHistoryView(generics.CreateAPIView):
     queryset = ServiceHistory.objects.all()
@@ -124,6 +132,7 @@ class DestroyServiceHistoryView(generics.DestroyAPIView):
 class ListPaymentsView(generics.ListAPIView):
     queryset = Payments.objects.all()
     serializer_class = PaymentsSerializer
+    filter_backends = [DjangoFilterBackend]
 
 class CreatePaymentsView(generics.CreateAPIView):
     queryset = Payments.objects.all()
