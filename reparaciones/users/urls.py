@@ -1,5 +1,9 @@
 from django.urls import path, include
 from rest_framework import routers
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 
 # Importe User
 from .views import ListUserView, CreateUserView, RetrieveUserView, UpdateUserView, DestroyUserView
@@ -11,6 +15,7 @@ from .views import ListClientView, CreateClientView, RetrieveClientView, UpdateC
 from .views import ListIdentificationTypeView, CreateIdentificationTypeView, RetrieveIdentificationTypeView, UpdateIdentificationTypeView, DestroyIdentificationTypeView
 
 url_user = [
+    # path("login", CreateTokenView.as_view(), name="login"),
     path("user/list", ListUserView.as_view(), name = "user-lista"),
     path("user/create", CreateUserView.as_view(), name = "user-crear"),
     path("user/retrieve/<int:pk>", RetrieveUserView.as_view(), name = "user-detalle"),
@@ -34,4 +39,10 @@ url_identification_type = [
     path("identification-type/destroy/<int:pk>", DestroyIdentificationTypeView.as_view(), name = "identification-type-eliminar"),
 ]
 
-urlpatterns = url_user + url_client + url_identification_type
+#Test JWT
+url_token = [
+    path("token/", TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path("token/refresh/", TokenRefreshView.as_view(), name='token_refresh'),
+]
+
+urlpatterns = url_user + url_client + url_identification_type + url_token
