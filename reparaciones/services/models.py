@@ -49,7 +49,7 @@ class Service(models.Model):
         verbose_name_plural = "Servicios"
     
     def __str__(self):
-        return f"{self.cliente}: {self.service_type}"
+        return f"{self.client}: {self.service_type}"
     
 class ServiceHistory(models.Model):
     service = models.ForeignKey(to = Service, verbose_name="Servicio", on_delete=models.SET_NULL, null=True, blank=True)
