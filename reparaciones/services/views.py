@@ -1,7 +1,9 @@
 from rest_framework import viewsets, generics, authentication, permissions
+from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
 from .models import PaymentMethod, Status, ServiceType, Service, ServiceHistory, Payments
-from .serializers import PaymentMethodSerializer, StatusSerializer, ServiceTypeSerializer, ServiceSerializer, ServiceHistorySerializer, PaymentsSerializer
+from users.models import Client
+from .serializers import PaymentMethodSerializer, StatusSerializer, ServiceTypeSerializer, ServiceSerializer, ServiceHistorySerializer, PaymentsSerializer, ServiceResumeSerializer
 
 # Create your views here.
 
@@ -96,6 +98,7 @@ class DestroyServiceTypeView(generics.DestroyAPIView):
 # Modelos principales
 
 # Vistas de Service (CRUD)
+
 class ListServiceView(generics.ListAPIView):
     queryset = Service.objects.all()
     serializer_class = ServiceSerializer
@@ -178,3 +181,13 @@ class DestroyPaymentsView(generics.DestroyAPIView):
     serializer_class = PaymentsSerializer
     permission_classes = [permissions.IsAuthenticated]
     
+    
+# Vistas combinadas
+class ResumeServiceListView(generics.ListAPIView):
+    queryset = Service.objects.all()
+    serializer_class = ServiceResumeSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    filter_backends = [DjangoFilterBackend]
+    
+
+       

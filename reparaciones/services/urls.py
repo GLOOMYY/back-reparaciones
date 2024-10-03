@@ -19,6 +19,9 @@ from .views import ListServiceHistoryView, CreateServiceHistoryView, RetrieveSer
 # Importe Payments
 from .views import ListPaymentsView, CreatePaymentsView, RetrievePaymentsView, UpdatePaymentsView, DestroyPaymentsView
 
+# Import Resumes
+from .views import ResumeServiceListView
+
 
 urls_payment_method = [
     path("payment-method/list", ListPaymentMethodView.as_view(), name = "payment-method-lista"),
@@ -68,4 +71,8 @@ urls_payments = [
     path("payments/destroy/<int:pk>", DestroyPaymentsView.as_view(), name = "payments-eliminar"),
 ]
 
-urlpatterns = urls_payment_method + urls_status + urls_service + urls_service_type + urls_service_history + urls_payments
+urls_resume = [
+    path("resume/service", ResumeServiceListView.as_view(), name = "resume-service")
+]
+
+urlpatterns = urls_payment_method + urls_status + urls_service + urls_service_type + urls_service_history + urls_payments + urls_resume
