@@ -1,9 +1,29 @@
-from rest_framework import viewsets, generics, authentication, permissions
+from rest_framework import (
+    viewsets,
+    generics,
+    authentication,
+    permissions,
+)
 from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
-from .models import PaymentMethod, Status, ServiceType, Service, ServiceHistory, Payments
+from .models import (
+    PaymentMethod,
+    Status,
+    ServiceType,
+    Service,
+    ServiceHistory,
+    Payments,
+)
 from users.models import Client
-from .serializers import PaymentMethodSerializer, StatusSerializer, ServiceTypeSerializer, ServiceSerializer, ServiceHistorySerializer, PaymentsSerializer, ServiceResumeSerializer
+from .serializers import (
+    PaymentMethodSerializer,
+    StatusSerializer,
+    ServiceTypeSerializer,
+    ServiceSerializer,
+    ServiceHistorySerializer,
+    PaymentsSerializer,
+    ServiceResumeSerializer,
+)
 
 # Create your views here.
 

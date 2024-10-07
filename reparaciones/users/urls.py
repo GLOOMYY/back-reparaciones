@@ -1,4 +1,7 @@
-from django.urls import path, include
+from django.urls import (
+    path,
+    include,
+)
 from rest_framework import routers
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
@@ -6,13 +9,31 @@ from rest_framework_simplejwt.views import (
 )
 
 # Importe User
-from .views import ListUserView, CreateUserView, RetrieveUserView, UpdateUserView, DestroyUserView
+from .views import (
+    ListUserView,
+    CreateUserView,
+    RetrieveUserView,
+    UpdateUserView,
+    DestroyUserView,
+)
 
 # Importe Client
-from .views import ListClientView, CreateClientView, RetrieveClientView, UpdateClientView, DestroyClientView, CountClientView
+from .views import (
+    ListClientView,
+    CreateClientView,
+    RetrieveClientView,
+    UpdateClientView,
+    DestroyClientView,
+)
 
 # Importe IdentificationType
-from .views import ListIdentificationTypeView, CreateIdentificationTypeView, RetrieveIdentificationTypeView, UpdateIdentificationTypeView, DestroyIdentificationTypeView
+from .views import (
+    ListIdentificationTypeView,
+    CreateIdentificationTypeView,
+    RetrieveIdentificationTypeView,
+    UpdateIdentificationTypeView,
+    DestroyIdentificationTypeView,
+)
 
 url_user = [
     # path("login", CreateTokenView.as_view(), name="login"),
@@ -29,7 +50,6 @@ url_client = [
     path("client/retrieve/<int:pk>", RetrieveClientView.as_view(), name = "client-detalle"),
     path("client/update/<int:pk>", UpdateClientView.as_view(), name = "client-actualizar"),
     path("client/destroy/<int:pk>", DestroyClientView.as_view(), name = "client-eliminar"),
-    path("client/count", CountClientView.as_view(), name="client-count"),
 ] 
 
 url_identification_type = [

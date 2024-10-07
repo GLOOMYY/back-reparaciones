@@ -1,5 +1,8 @@
 from django.db import models
-from users.models import User, Client
+from users.models import (
+    User,
+    Client,
+)
 
 # Modelos pequeños
 class PaymentMethod(models.Model):

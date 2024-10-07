@@ -1,6 +1,10 @@
 from django.db import models
 # importamos la clase abstracta de usuarios:
-from django.contrib.auth.models import AbstractUser, PermissionsMixin, BaseUserManager
+from django.contrib.auth.models import (
+    AbstractUser,
+    PermissionsMixin,
+    BaseUserManager,
+)
 
 # Clases pequeñas
 class IdentificationType(models.Model):

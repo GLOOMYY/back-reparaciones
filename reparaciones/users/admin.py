@@ -1,5 +1,9 @@
 from django.contrib import admin
-from .models import IdentificationType, User, Client
+from .models import (
+    IdentificationType,
+    User,
+    Client,
+)
 
 # Register your models here.
 

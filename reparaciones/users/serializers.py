@@ -1,7 +1,14 @@
 from rest_framework import serializers
-from django.contrib.auth import authenticate, get_user_model
+from django.contrib.auth import (
+    authenticate,
+    get_user_model,
+)
 from django.contrib.auth.hashers import make_password
-from .models import User, Client, IdentificationType
+from .models import (
+    User,
+    Client,
+    IdentificationType,
+)
 
 # Serializadores Basicos
 class UserSerializer(serializers.ModelSerializer):
@@ -69,8 +76,5 @@ class IdentificationTypeSerializer(serializers.ModelSerializer):
         model = IdentificationType
         fields = "__all__"
 
-# Serializadores contadores
-class CountClientSerializer(serializers.Serializer):
-    total = serializers.IntegerField()
 
 # Serializadores combinados

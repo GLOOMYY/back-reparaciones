@@ -1,13 +1,20 @@
-from rest_framework import generics, authentication, permissions
+from rest_framework import (
+    generics,
+    authentication,
+    permissions,
+)
 from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
-from .models import User, Client, IdentificationType
+from .models import (
+    User,
+    Client,
+    IdentificationType,
+)
 from .serializers import (
     UserSerializer,
     ClientSerializer,
     IdentificationTypeSerializer,
     AuthTokenSerializers,
-    CountClientSerializer,
 )
 
 # Create your views here.
@@ -79,14 +86,6 @@ class DestroyClientView(generics.DestroyAPIView):
     serializer_class = ClientSerializer
     permission_classes = [permissions.IsAuthenticated]
 
-class CountClientView(generics.ListAPIView):
-    queryset = Client.objects.all()
-    serializer_class = CountClientSerializer
-
-    def list(self, request, *args, **kwargs):
-        total = Client.objects.count()
-        serializer = self.get_serializer({'total': total})
-        return Response(serializer.data)
 
 # Vistas de IdentificacionType (CRUD)
 class ListIdentificationTypeView(generics.ListAPIView):

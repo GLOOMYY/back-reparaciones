@@ -1,5 +1,12 @@
 from django.contrib import admin
-from .models import PaymentMethod, Status, ServiceType, Service, ServiceHistory, Payments
+from .models import (
+    PaymentMethod,
+    Status,
+    ServiceType,
+    Service,
+    ServiceHistory,
+    Payments,
+)
 
 # Register your models here.
 

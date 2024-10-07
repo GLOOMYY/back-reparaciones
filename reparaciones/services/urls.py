@@ -1,23 +1,62 @@
-from django.urls import path, include
+from django.urls import (
+    path,
+    include,
+)
 from rest_framework import routers
 
 # Importe PaymentMethod
-from .views import ListPaymentMethodView, CreatePaymentMethodView, RetrievePaymentMethodView, UpdatePaymentMethodView, DestroyPaymentMethodView
+from .views import (
+    ListPaymentMethodView,
+    CreatePaymentMethodView,
+    RetrievePaymentMethodView,
+    UpdatePaymentMethodView,
+    DestroyPaymentMethodView,
+)
 
 # Importe Status
-from .views import ListStatusView, CreateStatusView, RetrieveStatusView, UpdateStatusView, DestroyStatusView
+from .views import (
+    ListStatusView,
+    CreateStatusView,
+    RetrieveStatusView,
+    UpdateStatusView,
+    DestroyStatusView,
+)
 
 # Importe ServiceType
-from .views import ListServiceTypeView, CreateServiceTypeView, RetrieveServiceTypeView, UpdateServiceTypeView, DestroyServiceTypeView
+from .views import (
+    ListServiceTypeView,
+    CreateServiceTypeView,
+    RetrieveServiceTypeView,
+    UpdateServiceTypeView,
+    DestroyServiceTypeView,
+)
 
 # Importe Service
-from .views import ListServiceView, CreateServiceView, RetrieveServiceView, UpdateServiceView, DestroyServiceView
+from .views import (
+    ListServiceView,
+    CreateServiceView,
+    RetrieveServiceView,
+    UpdateServiceView,
+    DestroyServiceView,
+)
 
 # Importe ServiceHistory
-from .views import ListServiceHistoryView, CreateServiceHistoryView, RetrieveServiceHistoryView, UpdateServiceHistoryView, DestroyServiceHistoryView
+from .views import (
+    ListServiceHistoryView,
+    CreateServiceHistoryView,
+    RetrieveServiceHistoryView,
+    UpdateServiceHistoryView,
+    DestroyServiceHistoryView,
+)
 
 # Importe Payments
-from .views import ListPaymentsView, CreatePaymentsView, RetrievePaymentsView, UpdatePaymentsView, DestroyPaymentsView
+from .views import (
+    ListPaymentsView,
+    CreatePaymentsView,
+    RetrievePaymentsView,
+    UpdatePaymentsView,
+    DestroyPaymentsView,
+)
 
 # Import Resumes
 from .views import ResumeServiceListView

@@ -1,7 +1,17 @@
 from rest_framework import serializers
-from django.contrib.auth import authenticate, get_user_model
+from django.contrib.auth import (
+    authenticate,
+    get_user_model,
+)
 from django.contrib.auth.hashers import make_password
-from .models import Service, ServiceHistory, Payments, PaymentMethod, Status, ServiceType
+from .models import (
+    Service,
+    ServiceHistory,
+    Payments,
+    PaymentMethod,
+    Status,
+    ServiceType,
+)
 from users.serializers import ClientSerializer
 
 # Serializadores basicos
