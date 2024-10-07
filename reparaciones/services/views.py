@@ -104,6 +104,7 @@ class ListServiceView(generics.ListAPIView):
     serializer_class = ServiceSerializer
     permission_classes = [permissions.IsAuthenticated]
     filter_backends = [DjangoFilterBackend]
+    filterset_fields = '__all__'
 
 class CreateServiceView(generics.CreateAPIView):
     queryset = Service.objects.all()
@@ -188,6 +189,8 @@ class ResumeServiceListView(generics.ListAPIView):
     serializer_class = ServiceResumeSerializer
     permission_classes = [permissions.IsAuthenticated]
     filter_backends = [DjangoFilterBackend]
+    filterset_fields = '__all__'
+
     
 
        

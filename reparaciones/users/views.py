@@ -7,6 +7,7 @@ from .serializers import (
     ClientSerializer,
     IdentificationTypeSerializer,
     AuthTokenSerializers,
+    CountClientSerializer,
 )
 
 # Create your views here.
@@ -53,6 +54,7 @@ class ListClientView(generics.ListAPIView):
     filter_backends = [DjangoFilterBackend]
 
 
+
 class CreateClientView(generics.CreateAPIView):
     queryset = Client.objects.all()
     serializer_class = ClientSerializer
@@ -77,6 +79,14 @@ class DestroyClientView(generics.DestroyAPIView):
     serializer_class = ClientSerializer
     permission_classes = [permissions.IsAuthenticated]
 
+class CountClientView(generics.ListAPIView):
+    queryset = Client.objects.all()
+    serializer_class = CountClientSerializer
+
+    def list(self, request, *args, **kwargs):
+        total = Client.objects.count()
+        serializer = self.get_serializer({'total': total})
+        return Response(serializer.data)
 
 # Vistas de IdentificacionType (CRUD)
 class ListIdentificationTypeView(generics.ListAPIView):

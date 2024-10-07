@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, get_user_model
 from django.contrib.auth.hashers import make_password
 from .models import User, Client, IdentificationType
 
-
+# Serializadores Basicos
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
@@ -68,3 +68,9 @@ class IdentificationTypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = IdentificationType
         fields = "__all__"
+
+# Serializadores contadores
+class CountClientSerializer(serializers.Serializer):
+    total = serializers.IntegerField()
+
+# Serializadores combinados

@@ -9,7 +9,7 @@ from rest_framework_simplejwt.views import (
 from .views import ListUserView, CreateUserView, RetrieveUserView, UpdateUserView, DestroyUserView
 
 # Importe Client
-from .views import ListClientView, CreateClientView, RetrieveClientView, UpdateClientView, DestroyClientView
+from .views import ListClientView, CreateClientView, RetrieveClientView, UpdateClientView, DestroyClientView, CountClientView
 
 # Importe IdentificationType
 from .views import ListIdentificationTypeView, CreateIdentificationTypeView, RetrieveIdentificationTypeView, UpdateIdentificationTypeView, DestroyIdentificationTypeView
@@ -29,6 +29,7 @@ url_client = [
     path("client/retrieve/<int:pk>", RetrieveClientView.as_view(), name = "client-detalle"),
     path("client/update/<int:pk>", UpdateClientView.as_view(), name = "client-actualizar"),
     path("client/destroy/<int:pk>", DestroyClientView.as_view(), name = "client-eliminar"),
+    path("client/count", CountClientView.as_view(), name="client-count"),
 ] 
 
 url_identification_type = [

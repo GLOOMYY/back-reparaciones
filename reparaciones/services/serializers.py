@@ -4,6 +4,7 @@ from django.contrib.auth.hashers import make_password
 from .models import Service, ServiceHistory, Payments, PaymentMethod, Status, ServiceType
 from users.serializers import ClientSerializer
 
+# Serializadores basicos
 class ServiceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Service
@@ -38,6 +39,7 @@ class ServiceTypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = ServiceType
         fields = "__all__"
+
 
 # Combinados
 
